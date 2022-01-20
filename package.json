@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/douglasgabr/mongoose-lean-defaults.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "keywords": [
     "mongoose",
     "lean",
