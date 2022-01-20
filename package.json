@@ -1,9 +1,9 @@
 {
   "name": "@hello-aria/mongoose-lean-defaults",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Attach defaults to the results of mongoose queries when using `.lean()`",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "dev": "jest --watchAll",

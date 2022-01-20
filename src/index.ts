@@ -140,7 +140,7 @@ function attachDefaultsToDoc(
   }
   for (let i = 0; i < defaults.length; ++i) {
     const defaultToApply = defaults[i];
-    if (!mpath.has(defaultToApply.path, doc)) {
+    if (mpath.get(defaultToApply.path, doc) === undefined) {
       const pathSegments = defaultToApply.path.split('.');
       let cur = doc as Record<string, unknown>;
       for (let j = 0; j < pathSegments.length - 1; ++j) {
@@ -150,6 +150,14 @@ function attachDefaultsToDoc(
       let _default = defaultToApply.default;
       if (typeof _default === 'function') {
         _default = _default.call(doc, doc);
+      }
+      const schemaType = mpath.get(defaultToApply.path, schema.paths);
+      if (
+        typeof schemaType === 'object' &&
+        schemaType !== null &&
+        typeof schemaType.cast === 'function'
+      ) {
+        _default = schemaType.cast(_default);
       }
       cur[pathSegments[pathSegments.length - 1]] = _default;
     }
