@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/douglasgabr/mongoose-lean-defaults.git"
+    "url": "git+https://github.com/Hello-Aria/mongoose-lean-defaults.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
