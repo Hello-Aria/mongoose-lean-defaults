@@ -9,7 +9,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node: ['12', '14', '16']
+        node: ['16']
     services:
       mongodb:
         image: mongo
@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 16
           registry-url: https://registry.npmjs.org/
       - name: Download dist
         uses: actions/download-artifact@v2
@@ -47,4 +47,4 @@ jobs:
           name: dist
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
