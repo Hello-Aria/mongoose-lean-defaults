@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-lean-defaults",
+  "name": "@hello-aria/mongoose-lean-defaults",
   "version": "2.0.1",
   "description": "Attach defaults to the results of mongoose queries when using `.lean()`",
   "main": "index.js",
@@ -29,7 +29,7 @@
     "mpath": "^0.8.3"
   },
   "peerDependencies": {
-    "mongoose": "^5.6.4"
+    "mongoose": ">=5.6.4"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
